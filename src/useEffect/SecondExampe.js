@@ -8,11 +8,12 @@ const App = () => {
     useEffect(() => {
       console.log("component yüklendi");
 
-      const interval = setInterval(() => {
-        setNumber((n) => n + 1);
-      }, 1000);
+      setInterval(() => {
+        setNumber((n) => n+1)
+      },1000)       //setInterval istediğimiz değeri her saniye arttırmamızı sağlar
+      // number+1 yerine n kullanabiliriz bu parametre de number demek
 
-      return () => clearInterval(interval);       //component kaldırıldığında çalışır   
+      return () => console.log("component unmount");    //component silindiğinde çalışır bu return component unmount edildiği anı yakalayabiliyrpuz
 
 
     }, [])          // [] boş array verilirse sadece bir kere çalışır component mount edildiğinde yakalar demek oluyor
